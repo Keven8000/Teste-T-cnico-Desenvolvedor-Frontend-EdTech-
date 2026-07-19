@@ -664,6 +664,8 @@ main h2 {
 .slider-wrapper {
     width: 100%;
     overflow: hidden; 
+    max-width: 440px;
+    margin: 0 auto;
     border-radius: 8px;
 }
 
