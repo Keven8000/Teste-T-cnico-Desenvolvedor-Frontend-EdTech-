@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste Técnico - Desenvolvedor Frontend</title>
-    <!-- Conectando o seu arquivo CSS -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header class="hero-header">
         <!-- Fundo Absoluto (Fica atrás de tudo) -->
-        <div class="hero-bg">
+        <div class="hero-bg" aria-hidden="true">
             <!-- O gradient geral de fundo -->
             <div class="bg-gradient-base"></div>
 
@@ -24,18 +23,15 @@
 
             <!-- Os vetores (Linhas curvas) -->
             <div class="bg-vectors-container">
-                <!-- Vector 1 -->
-                <svg class="vector-1" width="1280" height="648" viewBox="0 0 1280 648" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="vector-1" aria-hidden="true" focusable="false" width="1280" height="648" viewBox="0 0 1280 648" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.5" d="M1280 0.662094C1024 162.212 725.333 296.837 384 404.537C42.6667 512.237 -85.3333 593.012 0 646.862" stroke="#76B900" stroke-width="1.56581"/>
                 </svg>
 
-                <!-- Vector 2 -->
-                <svg class="vector-2" width="1280" height="290" viewBox="0 0 1280 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="vector-2" aria-hidden="true" focusable="false" width="1280" height="290" viewBox="0 0 1280 290" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 161.829C341.333 107.979 597.333 134.904 768 242.604C938.667 350.304 1109.33 269.529 1280 0.279434" stroke="#76B900" stroke-width="1.04387"/>
                 </svg>
 
-                <!-- Vector 3 -->
-                <svg class="vector-3" width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="vector-3" aria-hidden="true" focusable="false" width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 17.1988C256 -36.6512 469.333 44.1238 640 259.524C810.667 474.924 1024 555.699 1280 501.849" stroke="#76B900" stroke-width="2.08775"/>
                 </svg>
             </div>
@@ -141,7 +137,7 @@
                 <div class="lateral-image-wrapper">
                     <img 
                         src="/assets/images/Container.webp" 
-                        alt="Descrição da imagem lateral" 
+                        alt="Imagem de uma onda" 
                         class="lateral-img"
                     >
                 </div>                
@@ -173,19 +169,40 @@
                 </div> 
 
                 <div class="slider-controls">
-                    <button class="slider-btn prev-btn" id="prevBtn" disabled>
+                    <button class="slider-btn prev-btn" id="prevBtn" disabled aria-label="Slide anterior">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
 
-                    <div class="slider-dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
+                    <div class="slider-dots" role="tablist" aria-label="Slides">
+                        <button 
+                            class="dot active" 
+                            data-index="0" 
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="slide-0"
+                            aria-label="Ir para slide 1"
+                        ></button>
+                        <button 
+                            class="dot" 
+                            data-index="1" 
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="slide-1"
+                            aria-label="Ir para slide 2"
+                        ></button>
+                        <button 
+                            class="dot" 
+                            data-index="2" 
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="slide-2"
+                            aria-label="Ir para slide 3"
+                        ></button>
                     </div>
 
-                    <button class="slider-btn next-btn" id="nextBtn">
+                    <button class="slider-btn next-btn" id="nextBtn" aria-label="Próximo slide">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
@@ -211,7 +228,7 @@
                     <div class="inter-card">
                         <!-- Estado Fechado -->
                         <div class="inter-card-closed">
-                            <span class="inter-icon">?</span>
+                            <span class="inter-icon" aria-hidden="true">?</span>
                             <button class="inter-btn-abrir">Abrir</button>
                         </div>
                         <!-- Estado Aberto -->
@@ -226,7 +243,7 @@
                     <!-- Card 2 -->
                     <div class="inter-card">
                         <div class="inter-card-closed">
-                            <span class="inter-icon">?</span>
+                            <span class="inter-icon" aria-hidden="true">?</span>
                             <button class="inter-btn-abrir">Abrir</button>
                         </div>
                         <div class="inter-card-opened">
@@ -240,7 +257,7 @@
                     <!-- Card 3 -->
                     <div class="inter-card">
                         <div class="inter-card-closed">
-                            <span class="inter-icon">?</span>
+                            <span class="inter-icon" aria-hidden="true">?</span>
                             <button class="inter-btn-abrir">Abrir</button>
                         </div>
                         <div class="inter-card-opened">
@@ -267,7 +284,7 @@
                     <audio id="customAudio" src="assets/audio/music.mp3" preload="metadata"></audio>
 
                     <!-- Botão Play/Pause -->
-                    <button class="audio-play-btn" id="playPauseBtn">
+                    <button class="audio-play-btn" id="playPauseBtn" aria-label="Reproduzir ou pausar áudio">
                         <!-- Ícone de Play (Padrão) -->
                         <svg class="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -310,7 +327,7 @@
                         </div>
                     </header>
 
-                    <textarea id="respostaTextarea" class="atividade-textarea" placeholder="Digite sua resposta aqui..."></textarea>
+                    <textarea id="respostaTextarea" class="atividade-textarea" placeholder="Digite sua resposta aqui..." aria-label="Área de texto para resposta discursiva"></textarea>
 
                     <div class="atividade-botoes">
                         <button id="btnResponder" class="btn-atividade">Responder</button>
@@ -332,7 +349,7 @@
                 <div class="atividade-container">
                     
                     <!-- Cabeçalho -->
-                    <header class="atividade-header">
+                    <div class="atividade-header">
                         <div class="icon-wrapper">
                             <!-- Trocado para o Icon2.svg conforme solicitado -->
                             <img src="assets/images/icons/Icon2.svg" alt="Ícone Atividade">
@@ -341,7 +358,7 @@
                             <h3>Atividade objetiva</h3>
                             <p>Qual das propriedades CSS abaixo é mais indicada para alinhar itens em uma única direção (linha ou coluna)?</p>
                         </div>
-                    </header>
+                    </div>
 
                     <!-- Opções de Resposta -->
                     <div class="atividade-opcoes">
@@ -445,7 +462,6 @@
 
 
     <!-- Conectando o seu arquivo JavaScript -->
-    <script src="js/main.js"></script>
     <script src="js/image-lateral.js" defer></script>
     <script src="js/slider.js" defer></script>
     <script src="js/cards.js" defer></script>

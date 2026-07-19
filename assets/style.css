@@ -1084,7 +1084,6 @@ main h2 {
     line-height: 1.5;
 }
 
-/* Textarea */
 .atividade-textarea {
     width: 100%;
     min-height: 160px;
@@ -1094,12 +1093,14 @@ main h2 {
     font-family: inherit;
     font-size: 14px;
     resize: vertical; 
-    outline: none;
+    outline: none; 
     transition: border-color 0.2s ease;
 }
 
 .atividade-textarea:focus {
     border-color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .atividade-textarea:disabled {
