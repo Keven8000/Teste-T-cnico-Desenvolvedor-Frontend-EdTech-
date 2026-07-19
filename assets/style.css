@@ -305,7 +305,7 @@ p {
 
 }
 
-.dot {
+.window-dots .dot {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -727,13 +727,28 @@ main h2 {
     gap: 8px;
 }
 
-.dot {
+.slider-dots .dot {
     width: 8px;
     height: 8px;
     border-radius: 9999px;
     background-color: #E5E7EB;
     transition: background-color 0.3s ease;
     cursor: pointer; 
+    position: relative;
+}
+
+/* Cria uma área clicável invisível de 48x48 ao redor da bolinha visual */
+.slider-dots .dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente na bolinha */
+    width: 48px;
+    height: 48px;
+    background-color: transparent; /* Invisível */
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .dot.active {
