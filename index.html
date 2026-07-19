@@ -317,28 +317,31 @@
             <section class="atividade-discursiva-section">
                 <div class="atividade-container">
                     
-                    <header class="atividade-header">
+                    <div class="atividade-header">
                         <div class="icon-wrapper">
                             <img src="assets/images/icons/Icon.svg" alt="Ícone Atividade">
                         </div>
                         <div class="atividade-textos">
-                            <h3>Atividade discursiva</h3>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <h3 id="discursiva-titulo">Atividade discursiva</h3>
+                            <p id="discursiva-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                         </div>
-                    </header>
+                    </div>
 
-                    <textarea id="respostaTextarea" class="atividade-textarea" placeholder="Digite sua resposta aqui..." aria-label="Área de texto para resposta discursiva"></textarea>
+                    <textarea 
+                        id="respostaTextarea" 
+                        class="atividade-textarea" 
+                        aria-labelledby="discursiva-titulo discursiva-desc"
+                        placeholder="Digite sua resposta aqui..."
+                    ></textarea>
 
                     <div class="atividade-botoes">
                         <button id="btnResponder" class="btn-atividade">Responder</button>
                         <button id="btnAlterar" class="btn-atividade" disabled>Alterar</button>
                     </div>
 
-                    <!-- Feedback (Escondido por padrão) -->
-                    <div id="feedbackArea" class="atividade-feedback" style="display: none;">
+                    <div id="feedbackArea" class="atividade-feedback" style="display: none;" role="status" aria-live="polite">
                         <button id="btnCloseFeedback" class="btn-close" aria-label="Fechar feedback">&times;</button>
                         <h4>É isso aí!</h4>
-                        
                     </div>
 
                 </div>
@@ -351,45 +354,45 @@
                     <!-- Cabeçalho -->
                     <div class="atividade-header">
                         <div class="icon-wrapper">
-                            <!-- Trocado para o Icon2.svg conforme solicitado -->
                             <img src="assets/images/icons/Icon2.svg" alt="Ícone Atividade">
                         </div>
                         <div class="atividade-textos">
-                            <h3>Atividade objetiva</h3>
-                            <p>Qual das propriedades CSS abaixo é mais indicada para alinhar itens em uma única direção (linha ou coluna)?</p>
+                            <h3 id="objetiva-titulo">Atividade objetiva</h3>
+                            <p id="objetiva-desc">Qual das propriedades CSS abaixo é mais indicada para alinhar itens em uma única direção (linha ou coluna)?</p>
                         </div>
                     </div>
 
                     <!-- Opções de Resposta -->
-                    <div class="atividade-opcoes">
+                    <fieldset class="atividade-opcoes" aria-labelledby="objetiva-titulo objetiva-desc">
+                        <legend class="sr-only">Qual das propriedades CSS abaixo é mais indicada para alinhar itens em uma única direção (linha ou coluna)?</legend>
+
                         <!-- Opção Incorreta -->
-                        <label class="opcao-item">
-                            <input type="checkbox" class="opcao-checkbox" value="grid">
+                        <label class="opcao-item" for="opcao-1">
+                            <input type="radio" id="opcao-1" name="resposta-objetiva" class="opcao-checkbox" value="grid">
                             <span class="opcao-texto">1 + 5 = 9</span>
                         </label>
                         
                         <!-- Opção Correta (Identificada pelo data-correta) -->
-                        <label class="opcao-item">
-                            <input type="checkbox" class="opcao-checkbox" value="flexbox" data-correta="true">
+                        <label class="opcao-item" for="opcao-2">
+                            <input type="radio" id="opcao-2" name="resposta-objetiva" class="opcao-checkbox" value="flexbox" data-correta="true">
                             <span class="opcao-texto">2 x 7 = 14</span>
                         </label>
                         
                         <!-- Opção Incorreta -->
-                        <label class="opcao-item">
-                            <input type="checkbox" class="opcao-checkbox" value="float">
+                        <label class="opcao-item" for="opcao-3">
+                            <input type="radio" id="opcao-3" name="resposta-objetiva" class="opcao-checkbox" value="float">
                             <span class="opcao-texto">9 - 5 = 3</span>
                         </label>
-                    </div>
+                    </fieldset>
 
                     <!-- Botões de Ação -->
                     <div class="atividade-botoes">
-                        <!-- Responder começa desativado até algo ser selecionado -->
                         <button id="btnResponderObj" class="btn-atividade" disabled>Responder</button>
                         <button id="btnAlterarObj" class="btn-atividade" disabled>Alterar</button>
                     </div>
 
-                    <!-- Feedback (Escondido por padrão) -->
-                    <div id="feedbackAreaObj" class="atividade-feedback" style="display: none;">
+                    <!-- Feedback -->
+                    <div id="feedbackAreaObj" class="atividade-feedback" style="display: none;" role="status" aria-live="polite">
                         <h4 id="feedbackTituloObj"></h4>
                         <p id="feedbackTextoObj"></p>
                     </div>
