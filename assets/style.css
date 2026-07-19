@@ -3,7 +3,7 @@
    ========================================= */
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter_18pt-Regular.woff2') format('truetype');
+    src: url('fonts/Inter_18pt-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter_28pt-Bold.woff2') format('truetype');
+    src: url('fonts/Inter_28pt-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -187,7 +187,7 @@ p {
     height: auto;
     min-width: 1280px; 
     left: 50%;
-    transform: translateX(-50%); /
+    transform: translateX(-50%); 
 }
 
 /* Posições Y exatas do Figma */

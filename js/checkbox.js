@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!objSection) return;
 
     const opcoesItems = objSection.querySelectorAll('.opcao-item');
-    const checkboxes = objSection.querySelectorAll('.opcao-checkbox'); // agora radios
+    const checkboxes = objSection.querySelectorAll('.opcao-checkbox');
     const btnResponder = objSection.querySelector('#btnResponderObj');
     const btnAlterar = objSection.querySelector('#btnAlterarObj');
     
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY_OBJ = 'atividadeObjetivaData';
 
     // Função auxiliar para travar a interface e mostrar o feedback
-    function aplicarEstadoRespondidoObj(radioSelecionado) {
-        const isCorreto = radioSelecionado.getAttribute('data-correta') === 'true';
+    function aplicarEstadoRespondidoObj(checkboxSelecionado) {
+        const isCorreto = checkboxSelecionado.getAttribute('data-correta') === 'true';
 
         feedbackArea.className = 'atividade-feedback'; 
         
@@ -61,21 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 2. Lógica de Seleção (radio já garante 1 por vez nativamente)
+    // 2. Lógica de Seleção (checkbox NÃO garante 1 por vez — controlamos aqui)
     // ==========================================
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
-            // Com radio, o navegador já desmarca os outros sozinho.
-            // Só precisamos atualizar a classe visual de todos.
-            opcoesItems.forEach(item => item.classList.remove('selecionado'));
-            e.target.closest('.opcao-item').classList.add('selecionado');
+            if (e.target.checked) {
+                // Desmarca manualmente todos os outros (checkbox não faz isso sozinho)
+                checkboxes.forEach(cb => {
+                    if (cb !== e.target) cb.checked = false;
+                });
+                opcoesItems.forEach(item => item.classList.remove('selecionado'));
+                e.target.closest('.opcao-item').classList.add('selecionado');
 
-            btnResponder.disabled = false;
+                btnResponder.disabled = false;
 
-            sessionStorage.setItem(STORAGE_KEY_OBJ, JSON.stringify({
-                opcaoSelecionada: e.target.value,
-                respondido: false
-            }));
+                sessionStorage.setItem(STORAGE_KEY_OBJ, JSON.stringify({
+                    opcaoSelecionada: e.target.value,
+                    respondido: false
+                }));
+            } else {
+                // Usuário desmarcou a própria opção — volta ao estado neutro
+                e.target.closest('.opcao-item').classList.remove('selecionado');
+                btnResponder.disabled = true;
+                sessionStorage.removeItem(STORAGE_KEY_OBJ);
+            }
         });
     });
 
@@ -83,13 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Comportamento: Clicar em "Responder"
     // ==========================================
     btnResponder.addEventListener('click', () => {
-        const radioSelecionado = Array.from(checkboxes).find(cb => cb.checked);
-        if (!radioSelecionado) return;
+        const checkboxSelecionado = Array.from(checkboxes).find(cb => cb.checked);
+        if (!checkboxSelecionado) return;
 
-        aplicarEstadoRespondidoObj(radioSelecionado);
+        aplicarEstadoRespondidoObj(checkboxSelecionado);
 
         sessionStorage.setItem(STORAGE_KEY_OBJ, JSON.stringify({
-            opcaoSelecionada: radioSelecionado.value,
+            opcaoSelecionada: checkboxSelecionado.value,
             respondido: true
         }));
     });
@@ -106,11 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
         opcoesItems.forEach(item => item.classList.remove('desabilitado'));
         checkboxes.forEach(cb => cb.disabled = false);
 
-        const radioSelecionado = Array.from(checkboxes).find(cb => cb.checked);
-        if (radioSelecionado) {
-            radioSelecionado.focus(); // devolve o foco pra opção que estava marcada
+        const checkboxSelecionado = Array.from(checkboxes).find(cb => cb.checked);
+        if (checkboxSelecionado) {
+            checkboxSelecionado.focus(); // devolve o foco pra opção que estava marcada
             sessionStorage.setItem(STORAGE_KEY_OBJ, JSON.stringify({
-                opcaoSelecionada: radioSelecionado.value,
+                opcaoSelecionada: checkboxSelecionado.value,
                 respondido: false
             }));
         }
