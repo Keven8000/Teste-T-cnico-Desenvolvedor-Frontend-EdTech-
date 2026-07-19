@@ -85,6 +85,15 @@ A aplicação é **100% responsiva**, garantindo um layout fluído e adaptável 
 *   Ao confirmar, o feedback é ativado e a interface travada.
 *   A opção "Alterar" reinicia a tentativa e inverte os estados dos botões adequadamente.
 
+**🧠 Decisão de Arquitetura: Checkbox vs Radio**
+Tenho ciência de que, semanticamente, o padrão mais correto para uma pergunta de resposta única seria o `input type="radio"`: o próprio navegador já garante a seleção exclusiva nativamente, e a navegação por teclado (setas alternando entre as opções) segue o comportamento nativo esperado por leitores de tela.
+
+No entanto, optei conscientemente por implementar com `input type="checkbox"`, controlando a exclusividade manualmente via JavaScript (desmarcando as demais opções a cada seleção), pelo seguinte motivo:
+
+1.  **Aderência ao Escopo:** O enunciado do teste especifica explicitamente "Seleção via checkbox", então priorizei seguir a especificação ao pé da letra em vez de aplicar o que seria tecnicamente mais correto do ponto de vista semântico.
+
+Essa escolha tem um trade-off assumido: o usuário pode desmarcar a própria opção clicando nela novamente (o que não aconteceria com radio), então esse caso também foi tratado no JS desmarcar a opção volta a interface ao estado neutro e desabilita o botão "Responder" novamente.
+
 ### ❓ Seção 10: FAQ
 *   Desenvolvido utilizando recursos nativos HTML.
 *   O clique alterna a expansão do conteúdo e destaca a pergunta em verde. Um item já é carregado aberto para guiar o usuário na interação.
