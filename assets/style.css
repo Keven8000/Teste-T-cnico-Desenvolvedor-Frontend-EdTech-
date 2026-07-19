@@ -724,7 +724,7 @@ main h2 {
 .slider-dots {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
 }
 
 .slider-dots .dot {
@@ -744,8 +744,8 @@ main h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza perfeitamente na bolinha */
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
     background-color: transparent; /* Invisível */
     border-radius: 50%;
     z-index: 1;
