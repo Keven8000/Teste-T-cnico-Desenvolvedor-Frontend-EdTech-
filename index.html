@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Técnico - Desenvolvedor Frontend</title>
+    <!-- Conectando o seu arquivo CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="hero-header">
+        <!-- Fundo Absoluto (Fica atrás de tudo) -->
+        <div class="hero-bg">
+            <!-- O gradient geral de fundo -->
+            <div class="bg-gradient-base"></div>
+
+            <!-- Os "Glows" (Borrões de luz) -->
+            <div class="bg-glow-1"></div>
+            <div class="bg-glow-2"></div>
+
+            <!-- Os círculos com borda -->
+            <div class="bg-circle-1"></div>
+            <div class="bg-circle-2"></div>
+
+            <!-- Os vetores (Linhas curvas) -->
+            <div class="bg-vectors-container">
+                <!-- Vector 1 -->
+                <svg class="vector-1" width="1280" height="648" viewBox="0 0 1280 648" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.5" d="M1280 0.662094C1024 162.212 725.333 296.837 384 404.537C42.6667 512.237 -85.3333 593.012 0 646.862" stroke="#76B900" stroke-width="1.56581"/>
+                </svg>
+
+                <!-- Vector 2 -->
+                <svg class="vector-2" width="1280" height="290" viewBox="0 0 1280 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 161.829C341.333 107.979 597.333 134.904 768 242.604C938.667 350.304 1109.33 269.529 1280 0.279434" stroke="#76B900" stroke-width="1.04387"/>
+                </svg>
+
+                <!-- Vector 3 -->
+                <svg class="vector-3" width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 17.1988C256 -36.6512 469.333 44.1238 640 259.524C810.667 474.924 1024 555.699 1280 501.849" stroke="#76B900" stroke-width="2.08775"/>
+                </svg>
+            </div>
+        </div>
+
+
+    
+        <div class="hero-container">
+            <!-- Flexbox principal dividindo os dois lados -->
+            <div class="hero-content-wrapper">
+                
+                <!-- Lado Esquerdo -->
+                <div class="hero-left">
+                    <h1>Lorem ipsum dolor, sit <span class="highlight-green">amet</span></h1>
+                    
+                    <p class="hero-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    
+                    <button class="hero-btn">Lorem Ipsum &rarr;</button>
+                </div>
+
+                <!-- Lado Direito (Quadrado Temporário) -->
+                <div class="hero-right">
+                    <div class="dashboard-mockup">
+                        <!-- Topo / HorizontalBorder -->
+                        <div class="dashboard-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="window-line"></div>
+                        </div>
+
+                        <!-- Corpo do Dashboard -->
+                        <div class="dashboard-body">
+                            
+                            <!-- Menu Lateral -->
+                            <div class="dashboard-sidebar">
+                                <div class="sidebar-texts">
+                                    <div class="text-line"></div>
+                                    <div class="text-line short"></div>
+                                </div>
+                                <div class="sidebar-btn"></div>
+                            </div>
+
+                            <!-- Conteúdo Direito (Gráfico e Cards) -->
+                            <div class="dashboard-content">
+                                <div class="chart-panel">
+                                    <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="chart-svg">
+                                        <!-- Preenchimento sólido com opacidade constante (Polygon) -->
+                                        <polygon points="0,40 15,30 30,35 45,15 60,25 75,10 90,20 100,5 100,40 0,40" fill="var(--primary-color)" fill-opacity="0.15" />
+                                        
+                                        <!-- Linha principal (Polyline) -->
+                                        <polyline points="0,40 15,30 30,35 45,15 60,25 75,10 90,20 100,5" fill="none" stroke="var(--primary-color)" stroke-width="1.5" />
+                                    </svg>
+                                </div>
+                                
+                                <div class="cards-panel">
+                                    <div class="dash-card"></div>
+                                    <div class="dash-card"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Container Principal -->
+    <main>
+        <div class="main-container">
+            <!-- Seção 1: Vídeo -->
+            <section class="video-section">
+                
+                <div class="video-content">
+                    <h2 class="video-title">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit
+                    </h2>
+                    <p class="video-description">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    </p>
+                </div>
+
+                <div class="video-player-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/ScMzIvxBSi4?si=rX1XG6TqDvwYV2Xq" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </section>
+
+
+            <!-- Seção 2: Imagem Lateral -->
+            <section class="lateral-section">
+                <!-- Lado esquerdo: Imagem -->
+                <div class="lateral-image-wrapper">
+                    <img 
+                        src="/assets/images/Container.webp" 
+                        alt="Descrição da imagem lateral" 
+                        class="lateral-img"
+                    >
+                </div>                
+
+                <!-- Lado direito: Textos -->
+                <div class="lateral-content">
+                    <p class="lateral-text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit voluptatum voluptatibus aperiam cum quasi repudiandae nostrum, sed amet quam maiores eum consectetur ipsa dolores quis ducimus, iusto dicta consequuntur facere!
+                    </p>
+                    <p class="lateral-text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit voluptatum voluptatibus aperiam cum quasi repudiandae nostrum, sed amet quam maiores eum consectetur ipsa dolores quis ducimus, iusto dicta consequuntur facere!
+                    </p>
+                </div>
+
+
+
+            </section>
+
+            <!-- Seção 3: Slider de Imagens -->
+            <section class="slider-section">
+                
+                <!-- Máscara do Slider -->
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="sliderTrack">
+                        <img src="assets/images/slide/slide-1.webp" alt="Slide 1" class="slide-img">
+                        <img src="assets/images/slide/slide-2.webp" alt="Slide 2" class="slide-img">
+                        <img src="assets/images/slide/slide-3.webp" alt="Slide 3" class="slide-img">
+                    </div> 
+                </div> 
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" id="prevBtn" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="slider-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+
+                    <button class="slider-btn next-btn" id="nextBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Seção 4: Destaque -->
+            <section class="destaque-section">
+                <div class="destaque-container">
+                    <p class="destaque-text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore nihil corporis suscipit soluta dolorem id consectetur, tenetur nesciunt ducimus maiores sequi veritatis nostrum, esse eaque delectus ea laboriosam repellendus! Ipsum nobis, mollitia facilis praesentium cupiditate quidem eaque itaque nulla ab obcaecati sapiente sequi porro, totam, non molestias excepturi explicabo adipisci deleniti architecto animi!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Seção 5: Cards Interativos -->
+            <section class="cards-section">
+                <div class="cards-container">
+                    
+                    <!-- Card 1 -->
+                    <div class="inter-card">
+                        <!-- Estado Fechado -->
+                        <div class="inter-card-closed">
+                            <span class="inter-icon">?</span>
+                            <button class="inter-btn-abrir">Abrir</button>
+                        </div>
+                        <!-- Estado Aberto -->
+                        <div class="inter-card-opened">
+                            <p class="inter-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe excepturi, dolores perspiciatis commodi eum dolore nesciunt tempore similique at quas.
+                            </p>
+                            <button class="inter-btn-fechar">Fechar</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="inter-card">
+                        <div class="inter-card-closed">
+                            <span class="inter-icon">?</span>
+                            <button class="inter-btn-abrir">Abrir</button>
+                        </div>
+                        <div class="inter-card-opened">
+                            <p class="inter-text">
+                                Dolorum provident obcaecati architecto facilis perferendis error sit! Expedita eius non voluptatum explicabo aspernatur repellendus quo hic.
+                            </p>
+                            <button class="inter-btn-fechar">Fechar</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="inter-card">
+                        <div class="inter-card-closed">
+                            <span class="inter-icon">?</span>
+                            <button class="inter-btn-abrir">Abrir</button>
+                        </div>
+                        <div class="inter-card-opened">
+                            <p class="inter-text">
+                                Nesciunt ducimus maiores sequi veritatis nostrum, esse eaque delectus ea laboriosam repellendus! Ipsum nobis, mollitia facilis praesentium.
+                            </p>
+                            <button class="inter-btn-fechar">Fechar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção 6: Texto simples -->
+             <section class="text-section">
+                <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+             </section>
+
+            <!-- Seção 7: Player de Áudio -->
+            <section class="audio-section">
+                <div class="audio-container">
+                    
+                    <audio id="customAudio" src="assets/audio/music.mp3" preload="metadata"></audio>
+
+                    <!-- Botão Play/Pause -->
+                    <button class="audio-play-btn" id="playPauseBtn">
+                        <!-- Ícone de Play (Padrão) -->
+                        <svg class="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        <!-- Ícone de Pause -->
+                        <svg class="icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                        </svg>
+                    </button>
+
+                    <!-- Trilha de Progresso -->
+                    <div class="audio-track-wrapper">
+                        <span class="audio-title">Faixa de Áudio EdTech</span>
+                        
+                        <div class="audio-progress-bg" id="progressBg">
+                            <div class="audio-progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tempo (Atual / Total) -->
+                    <div class="audio-time">
+                        <span id="currentTime">0:00</span> / <span id="durationTime">0:00</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção 8: Atividade Discursiva -->
+            <section class="atividade-discursiva-section">
+                <div class="atividade-container">
+                    
+                    <header class="atividade-header">
+                        <div class="icon-wrapper">
+                            <img src="assets/images/icons/Icon.svg" alt="Ícone Atividade">
+                        </div>
+                        <div class="atividade-textos">
+                            <h3>Atividade discursiva</h3>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </div>
+                    </header>
+
+                    <textarea id="respostaTextarea" class="atividade-textarea" placeholder="Digite sua resposta aqui..."></textarea>
+
+                    <div class="atividade-botoes">
+                        <button id="btnResponder" class="btn-atividade">Responder</button>
+                        <button id="btnAlterar" class="btn-atividade" disabled>Alterar</button>
+                    </div>
+
+                    <!-- Feedback (Escondido por padrão) -->
+                    <div id="feedbackArea" class="atividade-feedback" style="display: none;">
+                        <button id="btnCloseFeedback" class="btn-close" aria-label="Fechar feedback">&times;</button>
+                        <h4>É isso aí!</h4>
+                        
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção 9: Atividade Objetiva -->
+            <section class="atividade-objetiva-section">
+                <div class="atividade-container">
+                    
+                    <!-- Cabeçalho -->
+                    <header class="atividade-header">
+                        <div class="icon-wrapper">
+                            <!-- Trocado para o Icon2.svg conforme solicitado -->
+                            <img src="assets/images/icons/Icon2.svg" alt="Ícone Atividade">
+                        </div>
+                        <div class="atividade-textos">
+                            <h3>Atividade objetiva</h3>
+                            <p>Qual das propriedades CSS abaixo é mais indicada para alinhar itens em uma única direção (linha ou coluna)?</p>
+                        </div>
+                    </header>
+
+                    <!-- Opções de Resposta -->
+                    <div class="atividade-opcoes">
+                        <!-- Opção Incorreta -->
+                        <label class="opcao-item">
+                            <input type="checkbox" class="opcao-checkbox" value="grid">
+                            <span class="opcao-texto">1 + 5 = 9</span>
+                        </label>
+                        
+                        <!-- Opção Correta (Identificada pelo data-correta) -->
+                        <label class="opcao-item">
+                            <input type="checkbox" class="opcao-checkbox" value="flexbox" data-correta="true">
+                            <span class="opcao-texto">2 x 7 = 14</span>
+                        </label>
+                        
+                        <!-- Opção Incorreta -->
+                        <label class="opcao-item">
+                            <input type="checkbox" class="opcao-checkbox" value="float">
+                            <span class="opcao-texto">9 - 5 = 3</span>
+                        </label>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="atividade-botoes">
+                        <!-- Responder começa desativado até algo ser selecionado -->
+                        <button id="btnResponderObj" class="btn-atividade" disabled>Responder</button>
+                        <button id="btnAlterarObj" class="btn-atividade" disabled>Alterar</button>
+                    </div>
+
+                    <!-- Feedback (Escondido por padrão) -->
+                    <div id="feedbackAreaObj" class="atividade-feedback" style="display: none;">
+                        <h4 id="feedbackTituloObj"></h4>
+                        <p id="feedbackTextoObj"></p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção 10: FAQ (Perguntas Frequentes) -->
+            <section class="faq-section">
+                <div class="faq-container">
+                    
+                    <h2 class="faq-title">Perguntas frequentes</h2>
+                    <p class="faq-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                    <div class="faq-list">
+                        
+                        <!-- Item 1 (Aberto por Padrão) -->
+                        <details class="faq-item" open>
+                            <summary class="faq-summary">
+                                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </summary>
+                            <div class="faq-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                            </div>
+                        </details>
+
+                        <!-- Item 2 -->
+                        <details class="faq-item">
+                            <summary class="faq-summary">
+                                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </summary>
+                            <div class="faq-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </div>
+                        </details>
+
+                        <!-- Item 3 -->
+                        <details class="faq-item">
+                            <summary class="faq-summary">
+                                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </summary>
+                            <div class="faq-content">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <img src="assets/images/logo.webp" alt="Logo DOT Digital Group" class="footer-logo">
+            <p class="footer-text">© 2026 DOT Digital Group. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Conectando o seu arquivo JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/image-lateral.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/cards.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/textarea.js" defer></script>
+    <script src="js/checkbox.js" defer></script>
+    <script src="js/faq.js" defer></script>
+</body>
+</html>
