@@ -16,7 +16,7 @@ Instruções: https://drive.google.com/file/d/1Fovh5sKhIpSZki8pPOFt3Xzolss6Bpmz/
 Figma: https://www.figma.com/design/GeyF7bDNU7hFjfYBO6uJQn/EdTech---Teste-de-Frontend?node-id=18-562&t=8BIzWNhRcQMCggXu-0 
 
 
-# Performance e Lighthouse (PageSpeed Insights)
+## Performance e Lighthouse (PageSpeed Insights)
 O projeto foi desenvolvido desde o início com foco em otimização, acessibilidade e boas práticas modernas de Front-end. Os resultados podem ser conferidos no relatório oficial do [Google PageSpeed Insights](https://pagespeed.web.dev/analysis/https-testetecnicofrontend-netlify-app/blh35eao2r?form_factor=desktop), onde a página alcançou métricas de excelência em Acessibilidade, Melhores Práticas e SEO.
 
 **🧠 Decisão de Arquitetura: Critical CSS vs FOCO**
